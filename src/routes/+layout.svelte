@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Listener from './listener.svelte';
 	import { goto } from '$app/navigation';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
@@ -12,12 +13,14 @@
 	import MaterialSymbolsFeedback from '~icons/material-symbols/feedback';
 	import '../app.pcss';
 	let value = '';
-	const load = () => {
+	
+	const load2 = () => {
 		const text = value.trim();
 		if (text.length) {
 			const url = new URL(text);
 			const v = url.searchParams.get('v');
 			if (v) {
+				
 				goto(`/url?v=${v}`);
 			}
 		}
@@ -26,24 +29,25 @@
 </script>
 
 <Toaster richColors />
-
+<Listener />
 <header
 	class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
 	<div class="container flex h-14 w-full items-center gap-2">
 		<a href="/" class="mr-6 flex items-center space-x-2">
 			<img src={icon} alt="icon" class="h-6 w-6" />
-			<span class="font-bold">XTuber</span>
+			<span class="font-bold">ZenTubePaster</span>
 			<span class="rounded-full bg-blue-400 px-2 text-center text-xs text-white hover:bg-blue-500">
 				{$downloads.length}
 			</span>
 		</a>
-		<Input type="url" placeholder="https://youtube.com/..." class="grow" bind:value />
-		<Button on:click={load}>Load</Button>
-		<Button variant="ghost" href="https://www.buymeacoffee.com/chientrm" target="_blank">
+		<!-- <Input type="url" placeholder="https://youtube.com/..." class="grow" bind:value />
+		<Button on:click={load2}>Load</Button> -->
+		
+		<!-- <Button variant="ghost" href="https://www.buymeacoffee.com/chientrm" target="_blank">
 			<BxDonateBlood class="h-[1.2rem] w-[1.2rem]" />
 			<span>Donate</span>
-		</Button>
+		</Button> -->
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild let:builder>
 				<Button builders={[builder]} variant="ghost">
@@ -52,11 +56,11 @@
 				</Button>
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content align="end">
-				<DropdownMenu.Item href="https://x.com/realchientrm" target="_blank">X</DropdownMenu.Item>
-				<DropdownMenu.Item href="https://chientrm.com" target="_blank">Newsletter</DropdownMenu.Item
-				>
-				<DropdownMenu.Item href="https://github.com/chientrm/xtuber" target="_blank">
-					GitHub
+				<DropdownMenu.Item href="https://x.com/ZenitoGR" target="_blank">X</DropdownMenu.Item>
+				<!-- <DropdownMenu.Item href="https://chientrm.com" target="_blank">Newsletter</DropdownMenu.Item
+				> -->
+				<DropdownMenu.Item href="https://github.com/zenitogr" target="_blank">
+					GitHub zenitogr
 				</DropdownMenu.Item>
 				<DropdownMenu.Item>
 					Version:

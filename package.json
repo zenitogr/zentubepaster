@@ -1,5 +1,5 @@
 {
-	"name": "xtuber",
+	"name": "zentubepaster",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -40,6 +40,7 @@
 		"svelte-sonner": "^0.3.22",
 		"tailwind-merge": "^2.2.2",
 		"tailwind-variants": "^0.2.1",
+		"tauri-plugin-clipboard-api": "^0.6.6",
 		"tauri-plugin-upload-api": "github:tauri-apps/tauri-plugin-upload#v1"
 	}
 }

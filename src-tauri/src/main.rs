@@ -1,6 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use tauri_plugin_clipboard::ClipboardManager; 
 use chientrm_youtube_dl::{SingleVideo, YoutubeDl};
 use open;
 #[cfg(target_os = "windows")]
@@ -88,6 +89,7 @@ fn open_dir(folder: &str) -> Result<(), String> {
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_clipboard::init())
         .setup(|app| {
             let path_resolver = app.path_resolver();
             #[cfg(target_os = "linux")]
@@ -116,8 +118,16 @@ fn main() {
                 .expect("Failed to get ffmpeg");
             let state = AppState { ytdlp, ffmpeg };
             app.manage(state);
+            let handle = app.handle();
+            let _clipboard = handle.state::<tauri_plugin_clipboard::ClipboardManager>();
             Ok(())
         })
+        /* .setup(|app| {
+            let handle = app.handle();
+            let clipboard = handle.state::<tauri_plugin_clipboard::ClipboardManager>();
+            Ok(())
+        }) */
+        
         .invoke_handler(tauri::generate_handler![get_info, download, open_dir])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

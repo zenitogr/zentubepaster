@@ -1,0 +1,8 @@
+const text2 = text.trim();
+		if (text2.length) {
+			const url = new URL(text2);
+			const v = url.searchParams.get('v');
+			if (v) {
+				goto(`/url?v=${v}`);
+			}
+		}

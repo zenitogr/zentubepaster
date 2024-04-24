@@ -1,11 +1,11 @@
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "zentubepaster"
+version = "0.0.1"
+description = "Copy any yt-dlp compatible url and it automaticly loads in ZenTubePaster for you to just click download"
+authors = ["zenitogr"]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "zentubepaster"
 edition = "2021"
 rust-version = "1.60"
 
@@ -16,8 +16,9 @@ tauri-build = { version = "1.5.1", features = [] }
 
 [dependencies]
 open = "5.1.2"
-tauri = { version = "1.6.1", features = [ "updater", "api-all"] }
+tauri = { version = "1.6.1", features = [ "api-all"] }
 chientrm-youtube-dl = "0.9.0"
+tauri-plugin-clipboard = "0.6.6"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.

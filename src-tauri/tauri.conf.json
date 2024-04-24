@@ -7,7 +7,8 @@
     "distDir": "../build"
   },
   "package": {
-    "productName": "XTuber"
+    "productName": "ZenTubePaster",
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -15,7 +16,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
+      "category": "Utility",
       "copyright": "",
       "deb": {
         "depends": []
@@ -28,8 +29,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.chientrm.xtuber",
-      "longDescription": "",
+      "identifier": "foss.zenitogr.zentubepaster",
+      "longDescription": "Copy any yt-dlp compatible url and it automaticly loads in ZenTubePaster for you to just click download",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -49,12 +50,7 @@
       "csp": null
     },
     "updater": {
-      "active": true,
-      "endpoints": [
-        "https://github.com/chientrm/xtuber/releases/latest/download/latest.json"
-      ],
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJFNDc1QjI0MTg3MDFDODkKUldTSkhIQVlKRnRITHVIb2wrWG9XWVhtVWhKcmNuQlZFdUJUWXFaOHljZkFyeVRJYU4vSWpYQlAK"
+      "active": false
     },
     "windows": [
       {
@@ -64,7 +60,7 @@
         "height": 480,
         "fullscreen": false,
         "resizable": true,
-        "title": "XTuber"
+        "title": "ZenTubePaster"
       }
     ]
   }
